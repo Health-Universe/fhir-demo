@@ -6,8 +6,8 @@ import math
 from meldrx_fhir_client import FHIRClient
 
 # Workspaces...
-workspaceId_Smart = "02797a82-b390-4b99-846a-641ea6ef3c38"
-workspaceId_Epic = "8c3aab4f-e90b-4c77-ae54-2c9c7319a134"
+workspaceId_Smart = os.environ.get("MELDRX_SMARTHEALTHIT_WORKSPACE_ID")
+workspaceId_Epic = os.environ.get("MELDRX_EPIC_WORKSPACE_ID")
 MELDRX_WORKSPACE_ID_DEFAULT = workspaceId_Epic
 
 # Initial patient...
@@ -18,7 +18,7 @@ PATIENT_ID_DEFAULT = patientId_Epic
 # Configuration...
 MELDRX_CLIENT_SECRET = os.environ.get("MELDRX_CLIENT_SECRET")
 MELDRX_BASE_URL = "https://app.meldrx.com"
-MELDRX_CLIENT_ID = "46eaeaab5c03422986c9bd1157182643"
+MELDRX_CLIENT_ID = os.environ.get("MELDRX_CLIENT_ID")
 SCOPE = "system/*.read"
 
 def get_fhir_client(useEpic):
